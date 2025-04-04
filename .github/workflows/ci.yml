@@ -1,0 +1,54 @@
+name: CI/CD Pipeline  # Nombre del flujo de trabajo
+
+on:
+  push:
+    branches:
+      - main  # Se ejecuta cuando hay un push a la rama main
+  pull_request:
+    branches:
+      - main  # También en los PR a main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Define el sistema operativo
+    steps:
+      - name:  M- ️ Checkout código
+        uses: actions/checkout@v3
+
+      - name: ⚙️ Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18  # Versión de Node.js
+
+      - name:  M-& Instalar dependencias
+        run: npm install
+
+      - name:  ~@ Ejecutar pruebas
+        run: npm test
+name: CI/CD Pipeline  # Nombre del flujo de trabajo
+
+on:
+  push:
+    branches:
+      - main  # Se ejecuta cuando hay un push a la rama main
+  pull_request:
+    branches:
+      - main  # También en los PR a main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Define el sistema operativo
+    steps:
+      - name: 🛠️ Checkout código
+        uses: actions/checkout@v3
+
+      - name: ⚙️ Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18  # Versión de Node.js
+
+      - name: 📦 Instalar dependencias
+        run: npm install
+
+      - name: 🚀 Ejecutar pruebas
+        run: npm test
